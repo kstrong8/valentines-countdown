@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine’s Day 💘</title>
+<style>
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:linear-gradient(135deg,#ffb6d9,#ffe6f2);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+text-align:center;
+color:#b30059;
+}
+.card{
+background:white;
+padding:30px;
+border-radius:25px;
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+width:85%;
+max-width:350px;
+}
+h1{margin-bottom:15px;}
+#countdown{font-size:1.5em;margin:15px 0;}
+button{
+background:#ff4d88;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:25px;
+font-size:1em;
+cursor:pointer;
+}
+button:hover{background:#e60073;}
+</style>
+</head>
+<body>
+
+<div class="card">
+<h1>💖 Valentine’s Countdown 💖</h1>
+<div id="countdown"></div>
+<p>I can’t wait to see you at 4:30pm 💕</p>
+<button onclick="alert('Happy Valentine’s Day my love 💘')">
+Open Your Valentine 💌
+</button>
+</div>
+
+<script>
+const now=new Date();
+const target=new Date();
+target.setDate(now.getDate()+1);
+target.setHours(16,30,0,0);
+
+function update(){
+const diff=target-new Date();
+if(diff<=0){
+document.getElementById("countdown").innerHTML="It’s 4:30pm 💘";
+return;
+}
+const h=Math.floor((diff/(1000*60*60))%24);
+const m=Math.floor((diff/(1000*60))%60);
+const s=Math.floor((diff/1000)%60);
+document.getElementById("countdown").innerHTML=
+h+"h "+m+"m "+s+"s";
+}
+setInterval(update,1000);
+update();
+</script>
+
+</body>
+</html>
