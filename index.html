@@ -70,7 +70,7 @@ iframe{
 
 @keyframes float{
   0%{transform:translateY(0);opacity:1;}
-  100%{transform:translateY(-900px);opacity:0;}
+  100%{transform:translateY(-900px);opacity=0;}
 }
 </style>
 </head>
@@ -91,9 +91,9 @@ iframe{
     let me think about you all night ;P
   </div>
 
-  <!-- YouTube Embed starting at 0:40 -->
+  <!-- YouTube music starting at 0:37 -->
   <iframe width="100%" height="200"
-    src="https://www.youtube.com/watch?v=F0FFnnBQ74A&list=RDF0FFnnBQ74A&start_radio=1"
+    src="https://www.youtube.com/embed/F0FFnnBQ74A?start=37&autoplay=1"
     frameborder="0"
     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen>
@@ -135,7 +135,7 @@ setInterval(()=>{
   heart.style.left = Math.random()*100 + "vw";
   heart.style.bottom = "0";
   document.body.appendChild(heart);
-  setTimeout(()=> heart.remove(),6000);
+  setTimeout(()=>heart.remove(),6000);
 },400);
 </script>
 
